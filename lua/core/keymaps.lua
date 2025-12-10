@@ -86,3 +86,13 @@ map("n", "<C-h>", "<C-w>h", opts)
 map("n", "<C-j>", "<C-w>j", opts)
 map("n", "<C-k>", "<C-w>k", opts)
 map("n", "<C-l>", "<C-w>l", opts)
+
+-- ======================
+-- Diagnostics
+-- ======================
+map("n", "gl", function()
+  vim.diagnostic.open_float({ border = "rounded" })
+end, opts)
+map("n", "[d", vim.diagnostic.goto_prev, opts)
+map("n", "]d", vim.diagnostic.goto_next, opts)
+map("n", "<leader>dd", "<cmd>Trouble diagnostics toggle<CR>", opts)
