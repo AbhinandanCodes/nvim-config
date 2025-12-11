@@ -96,3 +96,15 @@ end, opts)
 map("n", "[d", vim.diagnostic.goto_prev, opts)
 map("n", "]d", vim.diagnostic.goto_next, opts)
 map("n", "<leader>dd", "<cmd>Trouble diagnostics toggle<CR>", opts)
+
+-- ====================== 
+-- Move lines up/down 
+-- ======================
+map("n", "<A-j>", "<cmd>m .+1<CR>:w<CR>==", opts) 
+map("n", "<A-k>", "<cmd>m .-2<CR>:w<CR>==", opts) 
+
+map("v", "<A-j>", ":m '>+1<CR>gv=gv:w<CR>", opts) 
+map("v", "<A-k>", ":m '<-2<CR>gv=gv:w<CR>", opts) 
+
+map("i", "<A-j>", "<Esc><cmd>m .+1<CR>:w<CR>==gi", opts) 
+map("i", "<A-k>", "<Esc><cmd>m .-2<CR>:w<CR>==gi", opts) 
