@@ -13,6 +13,7 @@ return {
           -- ["<Tab>"] = { "select_next", "fallback" },
           -- ["<S-Tab>"] = { "select_prev", "fallback" },
           ["<CR>"] = { "accept", "fallback" },
+          ["<Tab>"] = { "accept", "fallback" }
         },
 
         completion = {
@@ -22,6 +23,14 @@ return {
 
         sources = {
           default = { "lsp", "path", "snippets", "buffer" },
+        },
+
+        cmdline = {
+          keymap = { 
+            preset = 'inherit', 
+            ["<CR>"]  = { "fallback" },
+          },
+          completion = { menu = { auto_show = true } },
         },
       })
     end,
