@@ -108,3 +108,8 @@ map("v", "<A-k>", ":m '<-2<CR>gv=gv:w<CR>", opts)
 
 map("i", "<A-j>", "<Esc><cmd>m .+1<CR>:w<CR>==gi", opts) 
 map("i", "<A-k>", "<Esc><cmd>m .-2<CR>:w<CR>==gi", opts) 
+
+-- ====================== 
+-- Mark-Preview 
+-- ======================
+map("n", "<leader>md", ":Markview splitToggle<CR>", opts)
