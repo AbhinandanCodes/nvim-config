@@ -4,10 +4,41 @@ return {
 	{
 		"neovim/nvim-lspconfig",
 		config = function()
-			vim.lsp.config("lua_ls", { capabilities = capabilities })
-			vim.lsp.config("pyright", { capabilities = capabilities })
-			vim.lsp.config("jdtls", { capabilities = capabilities })
-			vim.lsp.config("ts_ls", { capabilities = capabilities })
+			vim.lsp.config("lua_ls", {
+				capabilities = capabilities,
+			})
+
+			vim.lsp.config("pyright", {
+				capabilities = capabilities,
+			})
+
+			vim.lsp.config("jdtls", {
+				capabilities = capabilities,
+			})
+
+			vim.lsp.config("rust_analyzer", {
+				capabilities = capabilities,
+			})
+
+			vim.lsp.config("ts_ls", {
+				capabilities = capabilities,
+			})
+
+			vim.lsp.config("html", {
+				capabilities = capabilities,
+			})
+
+			vim.lsp.config("cssls", {
+				capabilities = capabilities,
+			})
+
+			vim.lsp.config("jsonls", {
+				capabilities = capabilities,
+			})
+
+			vim.lsp.config("clangd", {
+				capabilities = capabilities,
+			})
 		end,
 	},
 }
