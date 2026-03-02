@@ -4,7 +4,7 @@ return {
 	event = "InsertLeave",
 	config = function()
 		require("auto-save").setup({
-			enabled = true, -- or false if you want to start disabled
+			enabled = true,
 			execution_message = {
 				message = function()
 					return "Auto-saved at " .. vim.fn.strftime("%H:%M:%S")
