@@ -120,3 +120,53 @@ map("i", "<A-k>", "<Esc><cmd>m .-2<CR>:w<CR>==gi", opts)
 -- ======================
 map("n", "<leader>md", ":Markview splitToggle<CR>", opts)
 
+-- ======================
+-- Todo Comments
+-- ======================
+
+local function toggle_trouble_todos()
+	local trouble = require("trouble")
+	if trouble.is_open() then
+		trouble.close()
+	else
+		vim.cmd("TodoTrouble")
+	end
+end
+
+local function toggle_loclist()
+	local qf_open = false
+	for _, win in ipairs(vim.fn.getwininfo()) do
+		if win.loclist == 1 then
+			qf_open = true
+			vim.cmd("lclose")
+			return
+		end
+	end
+	vim.cmd("TodoLocList")
+end
+
+local function toggle_quickfix()
+	local qf_open = false
+	for _, win in ipairs(vim.fn.getwininfo()) do
+		if win.quickfix == 1 then
+			qf_open = true
+			vim.cmd("cclose")
+			return
+		end
+	end
+	vim.cmd("TodoQuickFix")
+end
+
+map("n", "]x", function()
+	require("todo-comments").jump_next()
+end, opts)
+
+map("n", "[x", function()
+	require("todo-comments").jump_prev()
+end, opts)
+
+map("n", "<leader>xd", toggle_trouble_todos, opts)
+map("n", "<leader>xl", toggle_loclist, opts)
+map("n", "<leader>xq", toggle_quickfix, opts)
+
+map("n", "<leader>xt", "<cmd>TodoTelescope<CR>", opts)
