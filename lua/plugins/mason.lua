@@ -36,7 +36,7 @@ return {
 					-- Formatter
 					"stylua",
 					"clang-format",
-					"black",
+					"ruff",
 					"google-java-format",
 					"rustfmt",
 					"prettier",
