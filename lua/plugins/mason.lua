@@ -15,7 +15,7 @@ return {
 					-- LSP
 					"lua_ls",
 					"clangd",
-					"pyright",
+					"pyrefly",
 					"jdtls",
 					"rust_analyzer",
 					"ts_ls",
