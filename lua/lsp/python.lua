@@ -1,21 +1,11 @@
 local M = {}
 
 function M.setup(capabilities)
-  vim.lsp.config("pyright", {
-    capabilities = capabilities,
-    settings = {
-      python = {
-        analysis = {
-          autoSearchPaths = true,
-          useLibraryCodeForTypes = true,
-          diagnosticMode = "openFilesOnly",
-          typeCheckingMode = "basic",
-        },
-      },
-    },
-  })
+	vim.lsp.config("pyrefly", {
+		capabilities = capabilities,
+	})
 
-  vim.lsp.enable("pyright")
+	vim.lsp.enable("pyrefly")
 end
 
 return M

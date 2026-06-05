@@ -14,7 +14,7 @@ return {
         ensure_installed = {
          -- LSP
           "lua_ls",
-          "pyright",
+          "pyrefly",
           "jdtls",
           "ts_ls",
         },
@@ -30,7 +30,7 @@ return {
         ensure_installed = {
           -- Formatters
           "stylua",
-          "black",
+          "ruff",
           "prettier",
           "google-java-format",
         },
