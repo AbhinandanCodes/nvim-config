@@ -46,7 +46,7 @@ return {
 
 			require("lualine").setup({
 				options = {
-					theme = "dracula",
+					theme = "auto",
 					icons_enabled = true,
 				},
 				sections = {
