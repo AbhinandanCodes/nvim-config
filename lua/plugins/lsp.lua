@@ -21,7 +21,11 @@ return {
 				},
 				cmdline = {
 					keymap = {
-						preset = "inherit",
+						preset = "none",
+						["<C-n>"] = { "select_next", "fallback" },
+						["<C-p>"] = { "select_prev", "fallback" },
+
+						["<Tab>"] = { "accept", "fallback" },
 						["<CR>"] = { "fallback" },
 					},
 					completion = { menu = { auto_show = true } },
