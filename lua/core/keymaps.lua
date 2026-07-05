@@ -41,8 +41,8 @@ map("n", "<leader>fm", "<cmd>lua vim.lsp.buf.format({ async = true })<CR>", opts
 -- ======================
 -- ToggleTerm
 -- ======================
-map("n", "<leader>t", "<cmd>ToggleTerm direction=float<CR>", opts)
-map("t", "<esc>", [[<C-\><C-n>]], opts)
+map("n", "<leader>t", "<cmd>ToggleTerm<CR>", opts)
+map("t", "<C-t>", [[<C-\><C-n><cmd>ToggleTerm<CR>]], opts)
 
 -- ======================
 -- Auto-save toggle
@@ -77,7 +77,6 @@ map("n", "<leader>bd", "<cmd>bd<CR>", opts)
 -- Quick saving
 -- ======================
 map("n", "<leader>w", "<cmd>w<CR>", opts)
-
 
 -- ======================
 -- Delete without yanking
