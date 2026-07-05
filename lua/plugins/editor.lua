@@ -102,7 +102,62 @@ return {
 		dependencies = {},
 		config = function()
 			require("tree-sitter-manager").setup({
-				ensure_installed = { "lua", "python", "javascript", "typescript" },
+				ensure_installed = {
+					-- Shell
+					"bash",
+
+					-- Web
+					"html",
+					"css",
+					"javascript",
+					"typescript",
+					"tsx",
+					"json",
+
+					-- Lua
+					"lua",
+
+					-- Python
+					"python",
+
+					-- C/C++
+					"c",
+					"cpp",
+
+					-- Systems
+					"rust",
+					"go",
+
+					-- JVM
+					"java",
+
+					-- Config
+					"yaml",
+					"toml",
+					"dockerfile",
+
+					-- Documentation
+					"markdown",
+					"markdown_inline",
+
+					-- Git
+					"gitignore",
+
+					-- Vim
+					"vim",
+					"vimdoc",
+
+					-- Regex & Queries
+					"regex",
+					"query",
+
+					-- SQL
+					"sql",
+
+					-- Misc
+					"xml",
+					"csv",
+				},
 			})
 		end,
 	},
@@ -116,5 +171,16 @@ return {
 			},
 		},
 	},
+	{
+		"kdheepak/lazygit.nvim",
+		cmd = {
+			"LazyGit",
+		},
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+		},
+		keys = {
+			{ "<leader>lg", "<cmd>LazyGit<cr>", desc = "LazyGit" },
+		},
+	},
 }
-
