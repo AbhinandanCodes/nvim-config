@@ -81,8 +81,8 @@ map("n", "<leader>w", "<cmd>w<CR>", opts)
 -- ======================
 -- Delete without yanking
 -- ======================
-map("n", "D", '"_D', opts)
-map("v", "D", '"_d', opts)
+map("n", "<leader>d", '"_D', opts)
+map("v", "<leader>d", '"_d', opts)
 
 -- ======================
 -- Window navigation
