@@ -9,6 +9,7 @@ local opts = { silent = true }
 -- ======================
 map("n", "<leader>ff", "<cmd>Telescope find_files<cr>", opts)
 map("n", "<leader>fg", "<cmd>Telescope live_grep<cr>", opts)
+map("n", "<leader>fz", "<cmd>Telescope current_buffer_fuzzy_find theme=dropdown previewer=false<cr>", opts)
 map("n", "<leader>fb", "<cmd>Telescope buffers<cr>", opts)
 map("n", "<leader>fh", "<cmd>Telescope help_tags<cr>", opts)
 
@@ -47,11 +48,9 @@ map("t", "<C-t>", [[<C-\><C-n><cmd>ToggleTerm<CR>]], opts)
 -- ======================
 -- Auto-save toggle
 -- ======================
-local autosave_enabled = true
 map("n", "<leader>as", function()
 	local autosave = require("auto-save")
 	autosave.toggle()
-	autosave_enabled = not autosave_enabled
 end, opts)
 
 -- ======================
@@ -77,12 +76,6 @@ map("n", "<leader>bd", "<cmd>bd<CR>", opts)
 -- Quick saving
 -- ======================
 map("n", "<leader>w", "<cmd>w<CR>", opts)
-
--- ======================
--- Delete without yanking
--- ======================
-map("n", "<leader>d", '"_D', opts)
-map("v", "<leader>d", '"_d', opts)
 
 -- ======================
 -- Window navigation
@@ -121,10 +114,8 @@ local function toggle_trouble_todos()
 end
 
 local function toggle_loclist()
-	local qf_open = false
 	for _, win in ipairs(vim.fn.getwininfo()) do
 		if win.loclist == 1 then
-			qf_open = true
 			vim.cmd("lclose")
 			return
 		end
@@ -133,10 +124,8 @@ local function toggle_loclist()
 end
 
 local function toggle_quickfix()
-	local qf_open = false
 	for _, win in ipairs(vim.fn.getwininfo()) do
 		if win.quickfix == 1 then
-			qf_open = true
 			vim.cmd("cclose")
 			return
 		end
