@@ -11,7 +11,9 @@ return {
 		version = "*",
 		event = "InsertLeave",
 		config = function()
-			require("auto-save").setup({
+			local autosave = require("auto-save")
+
+			autosave.setup({
 				enabled = true,
 				execution_message = {
 					message = function()
@@ -27,6 +29,8 @@ return {
 					return fn.getbufvar(buf, "&modifiable") == 1 and fn.empty(fn.getbufvar(buf, "&buftype")) == 1
 				end,
 			})
+
+			autosave.off()
 		end,
 	},
 	{
