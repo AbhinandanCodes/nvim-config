@@ -44,22 +44,18 @@ return {
 				return path and (" " .. vim.fn.fnamemodify(path, ":t")) or ""
 			end
 
+			local function get_hl_fg(name)
+				local ok, hl = pcall(vim.api.nvim_get_hl, 0, { name = name })
+				if ok and hl and hl.fg then
+					return string.format("#%06x", hl.fg)
+				end
+				return nil
+			end
+
 			require("lualine").setup({
 				options = {
 					theme = "auto",
 					icons_enabled = true,
-				},
-				sections = {
-					lualine_c = {
-						"filename",
-						{
-							venv,
-							cond = function()
-								return vim.bo.filetype == "python"
-							end,
-							color = { fg = "#50FA7B", gui = "bold" },
-						},
-					},
 				},
 			})
 		end,
@@ -90,6 +86,11 @@ return {
 		dependencies = { "MunifTanjim/nui.nvim" },
 		opts = {
 			cmdline = { view = "cmdline_popup" },
+			lsp = {
+				progress = {
+					enabled = false,
+				},
+			},
 			views = {
 				cmdline_popup = {
 					position = {
@@ -156,4 +157,3 @@ api.nvim_set_hl(0, "NoiceConfirmBorder", { link = "FloatBorder" })
 		end,
 	},
 }
-
