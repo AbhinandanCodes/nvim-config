@@ -66,10 +66,8 @@ map("n", "<leader>af", function()
 end, opts)
 
 -- ======================
--- Buffer navigation
+-- Buffer
 -- ======================
-map("n", "<Tab>", "<cmd>bn<CR>", opts)
-map("n", "<S-Tab>", "<cmd>bp<CR>", opts)
 map("n", "<leader>bd", "<cmd>bd<CR>", opts)
 
 -- ======================
